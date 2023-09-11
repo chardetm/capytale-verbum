@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 import EditorComposer from './EditorComposer';
 import Editor from './Editor';
@@ -18,6 +18,8 @@ import {
     TextFormatDropdown,
     UnderlineButton,
   } from './plugins/ToolbarPlugin/components';
+
+  import "./CapytaleEditor.css";
 
   import Divider from './ui/Divider';
 
