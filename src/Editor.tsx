@@ -43,6 +43,7 @@ import DragDropPaste from './plugins/DragDropPastePlugin';
 
 // Capytale
 import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
+import MarkdownTooglePlugin from './plugins/MarkdownTooglePlugin';
 
 interface IEditorProps {
   children?: ReactNode;
@@ -51,6 +52,7 @@ interface IEditorProps {
   draggableBlocksEnabled?: boolean;
   emojisEnabled?: boolean;
   actionsEnabled?: boolean;
+  toogleMarkdownEnabled?: boolean;
   placeholder?: string;
   listMaxIndent?: number;
   isEditable?: boolean;
@@ -65,6 +67,7 @@ const Editor = ({
   draggableBlocksEnabled = false,
   emojisEnabled = false,
   actionsEnabled = false,
+  toogleMarkdownEnabled = false,
   listMaxIndent = 7,
   placeholder = '',
   isEditable = true,
@@ -147,6 +150,7 @@ const Editor = ({
 
         <HistoryPlugin externalHistoryState={historyState} />
         {actionsEnabled && <ActionsPlugin isRichText={isRichText} />}
+        {toogleMarkdownEnabled && <MarkdownTooglePlugin />}
       </div>
     </EditorContext.Provider>
   );

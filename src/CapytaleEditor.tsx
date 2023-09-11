@@ -31,7 +31,7 @@ const CapytaleEditor: React.FC<ICapytaleEditorProps> = ({isEditable = true}) => 
   return (
     <EditorComposer>
       <div className="editor-inner">
-        <Editor draggableBlocksEnabled={true} hashtagsEnabled={true} isEditable={isEditable} locale="fr">
+        <Editor draggableBlocksEnabled={true} hashtagsEnabled={true} toogleMarkdownEnabled={true} isEditable={isEditable} locale="fr">
           <ToolbarPlugin defaultFontSize="20px">
             <FontFamilyDropdown />
             <FontSizeDropdown />
