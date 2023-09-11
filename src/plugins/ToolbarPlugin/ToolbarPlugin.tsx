@@ -39,10 +39,6 @@ import CodeLanguageDropdown from './components/CodeLanguageDropdown';
 import BlockFormatDropdown from './components/BlockFormatDropdown';
 import Divider from '../../ui/Divider';
 
-// Capytale
-import { $isMathNode } from '../../nodes/MathNode';
-import { $patchStyle } from '../../nodes/utils';
-
 const supportedBlockTypes = new Set([
   'paragraph',
   'quote',
@@ -230,8 +226,6 @@ const ToolbarPlugin = ({
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           $patchStyleText(selection, styles);
-          const mathNodes = selection.getNodes().filter($isMathNode);
-          $patchStyle(mathNodes, styles);
         }
       });
     },

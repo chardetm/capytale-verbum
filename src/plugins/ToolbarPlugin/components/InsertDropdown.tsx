@@ -21,9 +21,6 @@ import TableCellActionMenuPlugin from '../../TableActionMenuPlugin';
 import HorizontalRulePlugin from '../../HorizontalRulePlugin';
 import EditorContext from '../../../context/EditorContext';
 
-// Capytale
-import MathPlugin, { INSERT_MATH_COMMAND } from '../../MathPlugin';
-
 // Taken from https://stackoverflow.com/a/9102270
 const YOUTUBE_ID_PARSER =
   /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -312,7 +309,7 @@ export interface IInsertDropdownProps {
   enableTwitter?: boolean;
   enablePoll?: boolean;
   enableImage?: { enable: boolean; maxWidth: number };
-  enableMath?: boolean;
+  enableEquations?: boolean;
   enableExcalidraw?: boolean;
   enableHorizontalRule?: boolean;
   enableStickyNote?: boolean;
@@ -324,8 +321,6 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
   enableYoutube = false,
   enableTwitter = false,
   enablePoll = false,
-  enableMath = false,
-  enableExcalidraw = false,
   enableHorizontalRule = false,
   enableStickyNote = false,
 }: IInsertDropdownProps) => {
@@ -345,7 +340,6 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
       {enableTwitter && <TwitterPlugin />}
       {enablePoll && <PollPlugin />}
       {enableImage.enable && <ImagesPlugin maxWidth={enableImage.maxWidth} />}
-      {enableMath && <MathPlugin />}
       {enableHorizontalRule && <HorizontalRulePlugin />}
 
       <DropDown
@@ -420,18 +414,6 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
           >
             <i className="icon poll" />
             <span className="text">Poll</span>
-          </button>
-        )}
-        {enableMath && (
-          <button
-            onClick={() => {
-              activeEditor.dispatchCommand(INSERT_MATH_COMMAND, { value: '' });
-            }}
-            className="item"
-            type="button"
-          >
-            <i className="icon math" />
-            <span className="text">Math</span>
           </button>
         )}
         {enableTwitter && (
