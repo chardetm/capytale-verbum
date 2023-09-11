@@ -40,10 +40,15 @@ import { LexicalEditor } from 'lexical';
 import { useTranslation } from 'react-i18next';
 import DragDropPaste from './plugins/DragDropPastePlugin';
 
+
+// Capytale
+import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
+
 interface IEditorProps {
   children?: ReactNode;
   hashtagsEnabled?: boolean;
   autoLinkEnabled?: boolean;
+  draggableBlocksEnabled?: boolean;
   emojisEnabled?: boolean;
   actionsEnabled?: boolean;
   placeholder?: string;
@@ -57,6 +62,7 @@ const Editor = ({
   children,
   hashtagsEnabled = false,
   autoLinkEnabled = false,
+  draggableBlocksEnabled = false,
   emojisEnabled = false,
   actionsEnabled = false,
   listMaxIndent = 7,
@@ -93,6 +99,7 @@ const Editor = ({
         <ClearEditorPlugin />
         {hashtagsEnabled && <HashtagPlugin />}
         {emojisEnabled && <EmojisPlugin />}
+        {draggableBlocksEnabled && <DraggableBlockPlugin />}
         <KeywordsPlugin />
         <SpeechToTextPlugin />
         <DragDropPaste />
