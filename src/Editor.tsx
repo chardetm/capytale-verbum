@@ -114,7 +114,12 @@ const Editor = ({
 
         <>
           <RichTextPlugin
-            contentEditable={<ContentEditable />}
+            contentEditable={
+                <div className="editor-scroller">
+                  <div className="editor" ref={onRef}>
+                        <ContentEditable />
+                    </div>
+                </div>}
             placeholder={placeholderComponent}
             ErrorBoundary={LexicalErrorBoundary}
           />
