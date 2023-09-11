@@ -140,7 +140,6 @@ const Editor = ({
           <TabFocusPlugin />
             {draggableBlocksEnabled && floatingAnchorElem && (
               <>
-                <div className='dragblocksrpz' />
                 <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
               </>
             )}
