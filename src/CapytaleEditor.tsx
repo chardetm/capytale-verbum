@@ -21,7 +21,11 @@ import {
 
   import Divider from './ui/Divider';
 
-const CapytaleEditor = ({isEditable = true}) => {
+  export interface ICapytaleEditorProps {
+    isEditable?: boolean;
+  }
+
+const CapytaleEditor: React.FC<ICapytaleEditorProps> = ({isEditable = true}) => {
   return (
     <EditorComposer>
       <div className="editor-inner">
