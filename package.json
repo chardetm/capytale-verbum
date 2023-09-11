@@ -43,17 +43,17 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "verbum",
-  "author": "Ozan Yurtsever",
-  "module": "dist/verbum.esm.js",
+  "name": "capytale-verbum",
+  "author": "Maverick Chardet & Ozan Yurtsever",
+  "module": "dist/capytale-verbum.esm.js",
   "size-limit": [
     {
-      "path": "dist/verbum.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/capytale-verbum.cjs.production.min.js",
+      "limit": "10000 KB"
     },
     {
-      "path": "dist/verbum.esm.js",
-      "limit": "10 KB"
+      "path": "dist/capytale-verbum.esm.js",
+      "limit": "10000 KB"
     }
   ],
   "devDependencies": {
@@ -106,6 +106,7 @@
     "@lexical/utils": "0.11.0",
     "i18next": "^22.0.3",
     "i18next-browser-languagedetector": "^7.0.0",
+    "katex": "^0.16.8",
     "lexical": "0.11.0",
     "react-i18next": "^12.0.0",
     "use-child": "^1.0.0",
@@ -115,6 +116,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozanyurtsever/verbum"
+    "url": "https://github.com/chardetm/capytale-verbum"
   }
 }

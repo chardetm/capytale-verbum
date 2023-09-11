@@ -21,6 +21,9 @@ import TableCellActionMenuPlugin from '../../TableActionMenuPlugin';
 import HorizontalRulePlugin from '../../HorizontalRulePlugin';
 import EditorContext from '../../../context/EditorContext';
 
+// Capytale
+import EquationsPlugin, { InsertEquationDialog } from '../../EquationsPlugin';
+
 // Taken from https://stackoverflow.com/a/9102270
 const YOUTUBE_ID_PARSER =
   /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -321,6 +324,7 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
   enableYoutube = false,
   enableTwitter = false,
   enablePoll = false,
+  enableEquations = false,
   enableHorizontalRule = false,
   enableStickyNote = false,
 }: IInsertDropdownProps) => {
@@ -340,6 +344,7 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
       {enableTwitter && <TwitterPlugin />}
       {enablePoll && <PollPlugin />}
       {enableImage.enable && <ImagesPlugin maxWidth={enableImage.maxWidth} />}
+      {enableEquations && <EquationsPlugin />}
       {enableHorizontalRule && <HorizontalRulePlugin />}
 
       <DropDown
@@ -448,6 +453,23 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
           >
             <i className="icon youtube" />
             <span className="text">YouTube Video</span>
+          </button>
+        )}
+        {enableEquations && (
+          <button
+            onClick={() => {
+              showModal('Insert Equation', (onClose) => (
+                <InsertEquationDialog
+                  activeEditor={activeEditor}
+                  onClose={onClose}
+                />
+              ));
+            }}
+            className="item"
+            type="button"
+          >
+            <i className="icon equation" />
+            <span className="text">Equation</span>
           </button>
         )}
         {enableStickyNote && (
