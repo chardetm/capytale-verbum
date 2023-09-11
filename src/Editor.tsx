@@ -89,6 +89,14 @@ const Editor = ({
     if (locale) i18n.changeLanguage(locale);
   }, []);
 
+  const [floatingAnchorElem, setFloatingAnchorElem] =
+    useState<HTMLDivElement | null>(null);
+  const onRef = (_floatingAnchorElem: HTMLDivElement) => {
+    if (_floatingAnchorElem !== null) {
+      setFloatingAnchorElem(_floatingAnchorElem);
+    }
+  };
+
   return (
     <EditorContext.Provider
       value={{ initialEditor: editor, activeEditor, setActiveEditor }}
@@ -99,7 +107,6 @@ const Editor = ({
         <ClearEditorPlugin />
         {hashtagsEnabled && <HashtagPlugin />}
         {emojisEnabled && <EmojisPlugin />}
-        {draggableBlocksEnabled && <DraggableBlockPlugin />}
         <KeywordsPlugin />
         <SpeechToTextPlugin />
         <DragDropPaste />
@@ -127,6 +134,11 @@ const Editor = ({
           <CharacterStylesPopupPlugin />
           <TabFocusPlugin />
         </>
+            {draggableBlocksEnabled && floatingAnchorElem && (
+              <>
+                <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
+              </>
+            )}
 
         <HistoryPlugin externalHistoryState={historyState} />
         {actionsEnabled && <ActionsPlugin isRichText={isRichText} />}
