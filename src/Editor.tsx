@@ -133,12 +133,13 @@ const Editor = ({
           <ClickableLinkPlugin />
           <CharacterStylesPopupPlugin />
           <TabFocusPlugin />
-        </>
             {draggableBlocksEnabled && floatingAnchorElem && (
               <>
+                <div className='dragblocksrpz' />
                 <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
               </>
             )}
+        </>
 
         <HistoryPlugin externalHistoryState={historyState} />
         {actionsEnabled && <ActionsPlugin isRichText={isRichText} />}
