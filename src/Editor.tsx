@@ -22,7 +22,7 @@ import { useSettings } from './context/SettingsContext';
 import { useSharedHistoryContext } from './context/SharedHistoryContext';
 import ActionsPlugin from './plugins/ActionsPlugin';
 import AutoLinkPlugin from './plugins/AutoLinkPlugin';
-import CharacterStylesPopupPlugin from './plugins/CharacterStylesPopupPlugin';
+// import CharacterStylesPopupPlugin from './plugins/CharacterStylesPopupPlugin';
 import ClickableLinkPlugin from './plugins/ClickableLinkPlugin';
 import CodeHighlightPlugin from './plugins/CodeHighlightPlugin';
 import EmojisPlugin from './plugins/EmojisPlugin';
@@ -44,6 +44,7 @@ import DragDropPaste from './plugins/DragDropPastePlugin';
 // Capytale
 import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
 import MarkdownTooglePlugin from './plugins/MarkdownTooglePlugin';
+import FloatingTextFormatToolbarPlugin from './plugins/FloatingTextFormatToolbarPlugin';
 
 interface IEditorProps {
   children?: ReactNode;
@@ -139,7 +140,7 @@ const Editor = ({
           <ListMaxIndentLevelPlugin maxDepth={listMaxIndent} />
           <LinkPlugin />
           <ClickableLinkPlugin />
-          <CharacterStylesPopupPlugin />
+          <FloatingTextFormatToolbarPlugin />
           <TabFocusPlugin />
             {draggableBlocksEnabled && floatingAnchorElem && (
               <>
