@@ -4,9 +4,11 @@ import EditorComposer from './EditorComposer';
 import Editor from './Editor';
 import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
 
+/*
 import CodeMirror from '@uiw/react-codemirror';
 import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
+*/
 
 import {
   AlignDropdown,
@@ -23,6 +25,7 @@ import {
   UnderlineButton,
 } from './plugins/ToolbarPlugin/components';
 
+/*
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { $getRoot } from 'lexical';
 import {
@@ -31,6 +34,7 @@ import {
 } from '@lexical/markdown';
 
 import { PLAYGROUND_TRANSFORMERS } from './plugins/MarkdownTransformers';
+*/
 
 import './CapytaleEditor.css';
 
@@ -41,6 +45,7 @@ export interface ICapytaleEditorProps {
 }
 
 const CapytaleEditorContent = ({ isEditable }) => {
+  /*
   const [editor] = useLexicalComposerContext();
   const [seeMarkdown, setSeeMarkdown] = React.useState(false);
   const [markdownValue, setMarkdownValue] = React.useState(`## Title
@@ -89,9 +94,10 @@ const CapytaleEditorContent = ({ isEditable }) => {
     }
     setSeeMarkdown(!seeMarkdown);
   }, [editor, seeMarkdown]);
-
+*/
   return (
     <>
+      {/*
       <button onClick={handleMarkdownToggle}>WYSIWYG / Markdown</button>
       {seeMarkdown && (
         <CodeMirror
@@ -105,14 +111,15 @@ const CapytaleEditorContent = ({ isEditable }) => {
           }}
         />
       )}
+        */}
       <div
         className="editor-inner"
-        style={{ display: seeMarkdown ? 'none' : 'block' }}
+        /*style={{ display: seeMarkdown ? 'none' : 'block' }}*/
       >
         <Editor
           draggableBlocksEnabled={true}
           hashtagsEnabled={true}
-          toogleMarkdownEnabled={true}
+          toogleMarkdownEnabled={false}
           isEditable={isEditable}
           locale="fr"
         >
