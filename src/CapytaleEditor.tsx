@@ -72,25 +72,22 @@ const CapytaleEditorContent = ({ isEditable }) => {
     editor.update(() => {
       setMarkdownValue($convertToMarkdownString(PLAYGROUND_TRANSFORMERS));
     });
-  }, [editor]);
+  }, [editor, setMarkdownValue]);
   const updateEditorValue = React.useCallback(() => {
     editor.update(() => {
       const root = $getRoot();
       $convertFromMarkdownString(markdownValue, PLAYGROUND_TRANSFORMERS);
       root.selectEnd();
     });
-  }, [editor]);
+  }, [editor, markdownValue]);
 
   const handleMarkdownToggle = React.useCallback(() => {
-    editor.update(() => {
-      if (seeMarkdown) {
-        updateEditorValue();
-      } else {
-        updateMarkdownValue();
-      }
-      console.log('seeMarkdown', seeMarkdown);
-      setSeeMarkdown(!seeMarkdown);
-    });
+    if (seeMarkdown) {
+      updateEditorValue();
+    } else {
+      updateMarkdownValue();
+    }
+    setSeeMarkdown(!seeMarkdown);
   }, [editor, seeMarkdown]);
 
   return (
