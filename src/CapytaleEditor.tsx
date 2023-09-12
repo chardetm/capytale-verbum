@@ -105,43 +105,43 @@ const CapytaleEditorContent = ({ isEditable }) => {
           }}
         />
       )}
-
-      {!seeMarkdown && (
-        <div className="editor-inner">
-          <Editor
-            draggableBlocksEnabled={true}
-            hashtagsEnabled={true}
-            toogleMarkdownEnabled={true}
-            isEditable={isEditable}
-            locale="fr"
-          >
-            <ToolbarPlugin defaultFontSize="20px">
-              <FontFamilyDropdown />
-              <FontSizeDropdown />
-              <Divider />
-              <BoldButton />
-              <ItalicButton />
-              <UnderlineButton />
-              <CodeFormatButton />
-              <InsertLinkButton />
-              <TextColorPicker />
-              <BackgroundColorPicker />
-              <TextFormatDropdown />
-              <Divider />
-              <InsertDropdown
-                enableEquations={true}
-                enableYoutube={true}
-                enableImage={{
-                  enable: true,
-                  maxWidth: 600,
-                }}
-              />
-              <Divider />
-              <AlignDropdown />
-            </ToolbarPlugin>
-          </Editor>
-        </div>
-      )}
+      <div
+        className="editor-inner"
+        style={{ display: seeMarkdown ? 'none' : 'block' }}
+      >
+        <Editor
+          draggableBlocksEnabled={true}
+          hashtagsEnabled={true}
+          toogleMarkdownEnabled={true}
+          isEditable={isEditable}
+          locale="fr"
+        >
+          <ToolbarPlugin defaultFontSize="20px">
+            <FontFamilyDropdown />
+            <FontSizeDropdown />
+            <Divider />
+            <BoldButton />
+            <ItalicButton />
+            <UnderlineButton />
+            <CodeFormatButton />
+            <InsertLinkButton />
+            <TextColorPicker />
+            <BackgroundColorPicker />
+            <TextFormatDropdown />
+            <Divider />
+            <InsertDropdown
+              enableEquations={true}
+              enableYoutube={true}
+              enableImage={{
+                enable: true,
+                maxWidth: 600,
+              }}
+            />
+            <Divider />
+            <AlignDropdown />
+          </ToolbarPlugin>
+        </Editor>
+      </div>
     </>
   );
 };
