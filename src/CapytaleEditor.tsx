@@ -100,6 +100,9 @@ const CapytaleEditorContent = ({ isEditable }) => {
           extensions={[
             markdown({ base: markdownLanguage, codeLanguages: languages }),
           ]}
+          onChange={(value) => {
+            setMarkdownValue(value);
+          }}
         />
       )}
 
