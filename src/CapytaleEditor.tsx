@@ -88,9 +88,10 @@ const CapytaleEditorContent = ({ isEditable }) => {
       } else {
         updateMarkdownValue();
       }
+      console.log('seeMarkdown', seeMarkdown);
       setSeeMarkdown(!seeMarkdown);
     });
-  }, [editor]);
+  }, [editor, seeMarkdown]);
 
   return (
     <>
