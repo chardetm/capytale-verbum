@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import ToolbarContext from '../../../context/ToolbarContext';
-import ColorPicker from '../../../ui/ColorPicker';
+import DropdownColorPicker from '../../../ui/DropdownColorPicker';
 import { useTranslation } from 'react-i18next';
 
 const BackgroundColorPicker = () => {
@@ -15,7 +15,7 @@ const BackgroundColorPicker = () => {
   );
 
   return (
-    <ColorPicker
+    <DropdownColorPicker
       buttonClassName="toolbar-item color-picker"
       buttonAriaLabel={t('toolbar:backgroundColorPicker.Description')}
       buttonIconClassName="icon bg-color"
