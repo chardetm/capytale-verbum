@@ -10,6 +10,7 @@ import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin';
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin';
 import { HashtagPlugin } from '@lexical/react/LexicalHashtagPlugin';
+import LexicalClickableLinkPlugin from '@lexical/react/LexicalClickableLinkPlugin';
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
@@ -23,7 +24,6 @@ import { useSharedHistoryContext } from './context/SharedHistoryContext';
 import ActionsPlugin from './plugins/ActionsPlugin';
 import AutoLinkPlugin from './plugins/AutoLinkPlugin';
 // import CharacterStylesPopupPlugin from './plugins/CharacterStylesPopupPlugin';
-import ClickableLinkPlugin from './plugins/ClickableLinkPlugin';
 import CodeHighlightPlugin from './plugins/CodeHighlightPlugin';
 import EmojisPlugin from './plugins/EmojisPlugin';
 import KeywordsPlugin from './plugins/KeywordsPlugin';
@@ -140,7 +140,7 @@ const Editor = ({
           <CheckListPlugin />
           <ListMaxIndentLevelPlugin maxDepth={listMaxIndent} />
           <LinkPlugin />
-          <ClickableLinkPlugin />
+          <LexicalClickableLinkPlugin />
           <FloatingTextFormatToolbarPlugin />
           <TabFocusPlugin />
           {floatingAnchorElem && (<FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />)}
