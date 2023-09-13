@@ -4,7 +4,6 @@ import BlockFormatDropdown from './BlockFormatDropdown';
 import BoldButton from './BoldButton';
 import CodeFormatButton from './CodeFormatButton';
 import CodeLanguageDropdown from './CodeLanguageDropdown';
-import FloatingLinkEditor from './FloatingLinkEditor';
 import FontFamilyDropdown from './FontFamilyDropdown';
 import FontSizeDropdown from './FontSizeDropdown';
 import InsertDropdown from './InsertDropdown';
@@ -23,7 +22,6 @@ export {
   BoldButton,
   CodeFormatButton,
   CodeLanguageDropdown,
-  FloatingLinkEditor,
   FontFamilyDropdown,
   FontSizeDropdown,
   InsertDropdown,

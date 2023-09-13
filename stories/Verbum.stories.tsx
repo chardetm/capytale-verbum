@@ -9,7 +9,6 @@ import {
   BoldButton,
   CodeFormatButton,
   CodeLanguageDropdown,
-  FloatingLinkEditor,
   FontFamilyDropdown,
   FontSizeDropdown,
   InsertDropdown,

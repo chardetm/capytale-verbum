@@ -1,13 +1,9 @@
 import React from 'react';
 import { useContext } from 'react';
-import EditorContext from '../../../context/EditorContext';
 import ToolbarContext from '../../../context/ToolbarContext';
-import FloatingLinkEditor from './FloatingLinkEditor';
-import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 
 const InsertLinkButton = () => {
-  const { activeEditor } = useContext(EditorContext);
   const { isLink, insertLink } = useContext(ToolbarContext);
   const { t } = useTranslation('toolbar');
 
@@ -22,11 +18,6 @@ const InsertLinkButton = () => {
       >
         <i className="format link" />
       </button>
-      {isLink &&
-        createPortal(
-          <FloatingLinkEditor editor={activeEditor} />,
-          document.body
-        )}
     </>
   );
 };

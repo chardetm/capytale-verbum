@@ -45,6 +45,7 @@ import DragDropPaste from './plugins/DragDropPastePlugin';
 import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
 import MarkdownTooglePlugin from './plugins/MarkdownTooglePlugin';
 import FloatingTextFormatToolbarPlugin from './plugins/FloatingTextFormatToolbarPlugin';
+import FloatingLinkEditorPlugin from './plugins/FloatingLinkEditorPlugin';
 
 interface IEditorProps {
   children?: ReactNode;
@@ -142,6 +143,7 @@ const Editor = ({
           <ClickableLinkPlugin />
           <FloatingTextFormatToolbarPlugin />
           <TabFocusPlugin />
+          {floatingAnchorElem && (<FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />)}
             {draggableBlocksEnabled && floatingAnchorElem && (
               <>
                 <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
