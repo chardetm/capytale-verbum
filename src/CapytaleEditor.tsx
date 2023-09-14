@@ -66,7 +66,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
         $insertNodes(nodes);
       });
     }
-  }, [htmlInitialContent]);
+  }, []);
   /*
   const [seeMarkdown, setSeeMarkdown] = React.useState(false);
   const [markdownValue, setMarkdownValue] = React.useState(`## Title
