@@ -2,7 +2,6 @@ import React from 'react';
 
 import EditorComposer from './EditorComposer';
 import Editor from './Editor';
-import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
 
 /*
 import CodeMirror from '@uiw/react-codemirror';
@@ -10,20 +9,6 @@ import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
 */
 
-import {
-  AlignDropdown,
-  BackgroundColorPicker,
-  BoldButton,
-  CodeFormatButton,
-  FontFamilyDropdown,
-  FontSizeDropdown,
-  InsertDropdown,
-  InsertLinkButton,
-  ItalicButton,
-  TextColorPicker,
-  TextFormatDropdown,
-  UnderlineButton,
-} from './plugins/ToolbarPlugin/components';
 
 /*
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
@@ -116,38 +101,7 @@ const CapytaleEditorContent = ({ isEditable }) => {
         className="editor-inner"
         /*style={{ display: seeMarkdown ? 'none' : 'block' }}*/
       >
-        <Editor
-          draggableBlocksEnabled={true}
-          hashtagsEnabled={true}
-          toogleMarkdownEnabled={false}
-          isEditable={isEditable}
-          locale="fr"
-        >
-          <ToolbarPlugin defaultFontSize="20px">
-            <FontFamilyDropdown />
-            <FontSizeDropdown />
-            <Divider />
-            <BoldButton />
-            <ItalicButton />
-            <UnderlineButton />
-            <CodeFormatButton />
-            <InsertLinkButton />
-            <TextColorPicker />
-            <BackgroundColorPicker />
-            <TextFormatDropdown />
-            <Divider />
-            <InsertDropdown
-              enableEquations={true}
-              enableYoutube={true}
-              enableImage={{
-                enable: true,
-                maxWidth: 600,
-              }}
-            />
-            <Divider />
-            <AlignDropdown />
-          </ToolbarPlugin>
-        </Editor>
+        <Editor />
       </div>
     </>
   );
