@@ -189,7 +189,7 @@ const CapytaleEditor: React.FC<ICapytaleEditorProps> = ({
   htmlInitialContent,
 }) => {
   if (htmlInitialContent) {
-    initialEditorState = '';
+    initialEditorState = null;
   }
   return (
     <EditorComposer initialEditorState={initialEditorState}>
