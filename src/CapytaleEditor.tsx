@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import EditorComposer from './EditorComposer';
 import Editor from './Editor';
 import ToolbarPlugin from './plugins/ToolbarPlugin/ToolbarPlugin';
+import { InitialEditorStateType } from '@lexical/react/LexicalComposer';
+
+import { $generateNodesFromDOM } from '@lexical/html';
+import { $insertNodes, $getRoot } from 'lexical';
 
 /*
 import CodeMirror from '@uiw/react-codemirror';
@@ -25,8 +29,9 @@ import {
   UnderlineButton,
 } from './plugins/ToolbarPlugin/components';
 
-/*
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+
+/*
 import { $getRoot } from 'lexical';
 import {
   $convertFromMarkdownString,
@@ -40,13 +45,29 @@ import './CapytaleEditor.css';
 
 import Divider from './ui/Divider';
 
-export interface ICapytaleEditorProps {
+export interface ICapytaleEditorContentProps {
   isEditable?: boolean;
+  onChange?: (value: string) => void;
+  htmlInitialContent?: string;
 }
-
-const CapytaleEditorContent = ({ isEditable }) => {
-  /*
+const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
+  isEditable,
+  onChange,
+  htmlInitialContent,
+}) => {
   const [editor] = useLexicalComposerContext();
+  useEffect(() => {
+    if (htmlInitialContent) {
+      const parser = new DOMParser();
+      const dom = parser.parseFromString(htmlInitialContent, 'text/html');
+      editor.update(() => {
+        const nodes = $generateNodesFromDOM(editor, dom);
+        $getRoot().select();
+        $insertNodes(nodes);
+      });
+    }
+  }, [htmlInitialContent]);
+  /*
   const [seeMarkdown, setSeeMarkdown] = React.useState(false);
   const [markdownValue, setMarkdownValue] = React.useState(`## Title
   
@@ -122,6 +143,7 @@ const CapytaleEditorContent = ({ isEditable }) => {
           toogleMarkdownEnabled={false}
           isEditable={isEditable}
           locale="fr"
+          onChange={onChange}
         >
           <ToolbarPlugin defaultFontSize="20px">
             <FontFamilyDropdown />
@@ -153,12 +175,29 @@ const CapytaleEditorContent = ({ isEditable }) => {
   );
 };
 
+export interface ICapytaleEditorProps {
+  isEditable?: boolean;
+  onChange?: (value: string) => void;
+  initialEditorState?: InitialEditorStateType;
+  htmlInitialContent?: string;
+}
+
 const CapytaleEditor: React.FC<ICapytaleEditorProps> = ({
   isEditable = true,
+  onChange,
+  initialEditorState,
+  htmlInitialContent,
 }) => {
+  if (htmlInitialContent) {
+    initialEditorState = '';
+  }
   return (
-    <EditorComposer>
-      <CapytaleEditorContent isEditable={isEditable} />
+    <EditorComposer initialEditorState={initialEditorState}>
+      <CapytaleEditorContent
+        onChange={onChange}
+        isEditable={isEditable}
+        htmlInitialContent={htmlInitialContent}
+      />
     </EditorComposer>
   );
 };
