@@ -1,5 +1,5 @@
 import React, { useCallback, useContext } from 'react';
-import Select from '../../../ui/Select';
+import VerbumSelect from '../../../ui/VerbumSelect';
 import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
@@ -30,7 +30,7 @@ const FontFamilyDropdown = ({
 
   return (
     <>
-      <Select
+      <VerbumSelect
         className="toolbar-item font-family"
         onChange={onFontFamilySelect}
         options={fontOptions}

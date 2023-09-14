@@ -2,7 +2,7 @@ import { $isCodeNode } from '@lexical/code';
 import { $getNodeByKey } from 'lexical';
 import React, { useCallback, useContext } from 'react';
 import EditorContext from '../../../context/EditorContext';
-import Select from '../../../ui/Select';
+import VerbumSelect from '../../../ui/VerbumSelect';
 import ToolbarContext from '../../../context/ToolbarContext';
 
 const CODE_LANGUAGE_OPTIONS: [string, string][] = [
@@ -42,7 +42,7 @@ const CodeLanguageDropdown = () => {
 
   return (
     <>
-      <Select
+      <VerbumSelect
         className="toolbar-item code-language"
         onChange={onCodeLanguageSelect}
         options={CODE_LANGUAGE_OPTIONS}

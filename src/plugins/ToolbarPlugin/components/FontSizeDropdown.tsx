@@ -1,5 +1,5 @@
 import React, { useCallback, useContext } from 'react';
-import Select from '../../../ui/Select';
+import VerbumSelect from '../../../ui/VerbumSelect';
 import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
@@ -35,7 +35,7 @@ const FontSizeDropdown = ({
 
   return (
     <>
-      <Select
+      <VerbumSelect
         className="toolbar-item font-size"
         onChange={onFontSizeSelect}
         options={fontSizeOptions}
