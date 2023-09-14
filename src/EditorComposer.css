@@ -9,8 +9,7 @@
 @import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
 
 .editor-shell {
-  margin: 20px auto;
-  border-radius: 2px;
+  height: 100%;
   color: #000;
   position: relative;
   line-height: 1.7;
@@ -24,6 +23,7 @@
   display: block;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  overflow-y: auto;
 }
 
 .editor-shell .editor-container.tree-view {
@@ -1106,8 +1106,8 @@ button.action-button:disabled {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   vertical-align: middle;
-  overflow: auto;
-  height: 36px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .toolbar button.toolbar-item {
