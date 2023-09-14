@@ -25,7 +25,7 @@ import * as React from 'react';
 import { useMemo, useRef } from 'react';
 
 import Button from '../ui/Button';
-import joinClasses from '../utils/join-classes';
+import joinClasses from '../utils/joinClasses';
 
 type Options = ReadonlyArray<Option>;
 

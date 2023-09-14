@@ -31,11 +31,17 @@ const FontFamilyDropdown = ({
   return (
     <>
       <Select
+        label="Police"
         className="toolbar-item font-family"
         onChange={onFontFamilySelect}
-        options={fontOptions}
         value={fontFamily}
-      />
+      >
+        {fontOptions.map(([option, text]) => (
+          <option key={option} value={option}>
+            {text}
+          </option>
+        ))}
+      </Select>
       <i className="chevron-down inside" />
     </>
   );

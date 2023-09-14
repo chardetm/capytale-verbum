@@ -36,11 +36,17 @@ const FontSizeDropdown = ({
   return (
     <>
       <Select
+        label="Taille"
         className="toolbar-item font-size"
         onChange={onFontSizeSelect}
-        options={fontSizeOptions}
         value={fontSize}
-      />
+      >
+        {fontSizeOptions.map(([option, text]) => (
+          <option key={option} value={option}>
+            {text}
+          </option>
+        ))}
+      </Select>
       <i className="chevron-down inside" />
     </>
   );
