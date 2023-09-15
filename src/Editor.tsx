@@ -40,7 +40,6 @@ import { LexicalEditor } from 'lexical';
 import { useTranslation } from 'react-i18next';
 import DragDropPaste from './plugins/DragDropPastePlugin';
 
-
 // Capytale
 import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
 import MarkdownTooglePlugin from './plugins/MarkdownTooglePlugin';
@@ -120,11 +119,12 @@ const Editor = ({
         <>
           <RichTextPlugin
             contentEditable={
-                <div className="editor-scroller">
-                  <div className="editor" ref={onRef}>
-                        <ContentEditable />
-                    </div>
-                </div>}
+              <div className="editor-scroller">
+                <div className="editor" ref={onRef}>
+                  <ContentEditable />
+                </div>
+              </div>
+            }
             placeholder={placeholderComponent}
             ErrorBoundary={LexicalErrorBoundary}
           />
@@ -141,14 +141,16 @@ const Editor = ({
           <ListMaxIndentLevelPlugin maxDepth={listMaxIndent} />
           <LinkPlugin />
           <LexicalClickableLinkPlugin />
-          <FloatingTextFormatToolbarPlugin />
+          {isEditable && <FloatingTextFormatToolbarPlugin />}
           <TabFocusPlugin />
-          {floatingAnchorElem && (<FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />)}
-            {draggableBlocksEnabled && floatingAnchorElem && (
-              <>
-                <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
-              </>
-            )}
+          {floatingAnchorElem && (
+            <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
+          )}
+          {draggableBlocksEnabled && floatingAnchorElem && (
+            <>
+              <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
+            </>
+          )}
         </>
 
         <HistoryPlugin externalHistoryState={historyState} />
