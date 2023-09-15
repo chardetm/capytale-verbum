@@ -59,12 +59,10 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
   const [editor] = useLexicalComposerContext();
   useEffect(() => {
     if (htmlInitialContent && !initialized) {
-      console.log('Adding HTML initial content', htmlInitialContent);
       const parser = new DOMParser();
       const dom = parser.parseFromString(htmlInitialContent, 'text/html');
       editor.update(() => {
         const nodes = $generateNodesFromDOM(editor, dom);
-        console.log(nodes.length, "nodes", nodes);
         $getRoot().clear().select();
         $insertNodes(nodes);
       });
@@ -149,7 +147,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
           locale="fr"
           onChange={onChange}
         >
-          <ToolbarPlugin defaultFontSize="20px">
+          {isEditable && (<ToolbarPlugin defaultFontSize="20px">
             <FontFamilyDropdown />
             <FontSizeDropdown />
             <Divider />
@@ -172,7 +170,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
             />
             <Divider />
             <AlignDropdown />
-          </ToolbarPlugin>
+          </ToolbarPlugin>)}
         </Editor>
       </div>
     </>
