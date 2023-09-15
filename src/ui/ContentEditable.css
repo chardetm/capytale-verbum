@@ -7,11 +7,12 @@
  *
  */
  .ContentEditable__root {
+  --v-padding: 8px;
   border: 0;
   font-size: 15px;
   display: block;
   position: relative;
   outline: 0;
-  padding: 8px 28px;
-  min-height: 50px;
+  padding: var(--v-padding) 28px;
+  min-height: calc(100% - calc(var(--v-padding) * 2));
 }
