@@ -162,6 +162,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
               <TextFormatDropdown />
               <Divider />
               <InsertDropdown
+                enableParagraph={true}
                 enableHorizontalRule={true}
                 enableEquations={true}
                 enableYoutube={true}
