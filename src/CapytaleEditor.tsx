@@ -58,6 +58,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
   const [editor] = useLexicalComposerContext();
   useEffect(() => {
     if (htmlInitialContent) {
+      console.log('Adding HTML initial content', htmlInitialContent);
       const parser = new DOMParser();
       const dom = parser.parseFromString(htmlInitialContent, 'text/html');
       editor.update(() => {
