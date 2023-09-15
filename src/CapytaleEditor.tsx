@@ -55,7 +55,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
   onChange,
   htmlInitialContent,
 }) => {
-    const [initialized, setInitialized] = React.useState(false);
+  const [initialized, setInitialized] = React.useState(false);
   const [editor] = useLexicalComposerContext();
   useEffect(() => {
     if (htmlInitialContent && !initialized) {
@@ -147,30 +147,33 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
           locale="fr"
           onChange={onChange}
         >
-          {isEditable && (<ToolbarPlugin defaultFontSize="20px">
-            <FontFamilyDropdown />
-            <FontSizeDropdown />
-            <Divider />
-            <BoldButton />
-            <ItalicButton />
-            <UnderlineButton />
-            <CodeFormatButton />
-            <InsertLinkButton />
-            <TextColorPicker />
-            <BackgroundColorPicker />
-            <TextFormatDropdown />
-            <Divider />
-            <InsertDropdown
-              enableEquations={true}
-              enableYoutube={true}
-              enableImage={{
-                enable: true,
-                maxWidth: 600,
-              }}
-            />
-            <Divider />
-            <AlignDropdown />
-          </ToolbarPlugin>)}
+          {isEditable && (
+            <ToolbarPlugin defaultFontSize="20px">
+              <FontFamilyDropdown />
+              <FontSizeDropdown />
+              <Divider />
+              <BoldButton />
+              <ItalicButton />
+              <UnderlineButton />
+              <CodeFormatButton />
+              <InsertLinkButton />
+              <TextColorPicker />
+              <BackgroundColorPicker />
+              <TextFormatDropdown />
+              <Divider />
+              <InsertDropdown
+                enableHorizontalRule={true}
+                enableEquations={true}
+                enableYoutube={true}
+                enableImage={{
+                  enable: true,
+                  maxWidth: 600,
+                }}
+              />
+              <Divider />
+              <AlignDropdown />
+            </ToolbarPlugin>
+          )}
         </Editor>
       </div>
     </>

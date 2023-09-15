@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
-import { $getRoot, LexicalEditor, RangeSelection } from 'lexical';
+import { $getRoot, $getSelection, LexicalEditor, RangeSelection } from 'lexical';
 import DropDown from '../../../ui/DropDown';
 import Button from '../../../ui/Button';
 import TextInput from '../../../ui/TextInput';
@@ -23,6 +23,8 @@ import EditorContext from '../../../context/EditorContext';
 
 // Capytale
 import EquationsPlugin, { InsertEquationDialog } from '../../EquationsPlugin';
+import { getSelectedNode } from 'src/utils/getSelectedNode';
+import { $createParagraphNode } from 'lexical';
 
 // Taken from https://stackoverflow.com/a/9102270
 const YOUTUBE_ID_PARSER =
@@ -303,6 +305,7 @@ export interface IInsertDropdownProps {
   enableImage?: { enable: boolean; maxWidth: number };
   enableEquations?: boolean;
   enableExcalidraw?: boolean;
+  enableParagraph?: boolean;
   enableHorizontalRule?: boolean;
   enableStickyNote?: boolean;
 }
@@ -315,6 +318,7 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
   enablePoll = false,
   enableEquations = false,
   enableHorizontalRule = false,
+  enableParagraph = false,
   enableStickyNote = false,
 }: IInsertDropdownProps) => {
   const { initialEditor, activeEditor } = useContext(EditorContext);
@@ -342,6 +346,25 @@ const InsertDropdown: React.FC<IInsertDropdownProps> = ({
         buttonAriaLabel="Insérer des éléments d'éditeur spéciaux"
         buttonIconClassName="icon plus"
       >
+        {enableParagraph && (
+          <button
+            onClick={() => {
+              activeEditor.update(() => {
+                const selection = $getSelection();
+                const node = selection?.getNodes()[0];
+                const topElement = node.getTopLevelElement();
+                const newParagraph = $createParagraphNode();
+                topElement.insertAfter(newParagraph);
+                newParagraph.selectEnd();
+              });
+            }}
+            className="item"
+            type="button"
+          >
+            <i className="icon paragraph" />
+            <span className="text">Paragraphe</span>
+          </button>
+        )}
         {enableHorizontalRule && (
           <button
             onClick={() => {
