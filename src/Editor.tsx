@@ -143,9 +143,7 @@ const Editor = ({
           <LexicalClickableLinkPlugin />
           {isEditable && <FloatingTextFormatToolbarPlugin />}
           <TabFocusPlugin />
-          {floatingAnchorElem && (
-            <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
-          )}
+          <FloatingLinkEditorPlugin />
           {draggableBlocksEnabled && floatingAnchorElem && (
             <>
               <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
