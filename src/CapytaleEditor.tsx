@@ -55,9 +55,10 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
   onChange,
   htmlInitialContent,
 }) => {
+    const [initialized, setInitialized] = React.useState(false);
   const [editor] = useLexicalComposerContext();
   useEffect(() => {
-    if (htmlInitialContent) {
+    if (htmlInitialContent && !initialized) {
       console.log('Adding HTML initial content', htmlInitialContent);
       const parser = new DOMParser();
       const dom = parser.parseFromString(htmlInitialContent, 'text/html');
@@ -66,8 +67,9 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
         $getRoot().select();
         $insertNodes(nodes);
       });
+      setInitialized(true);
     }
-  }, []);
+  }, [htmlInitialContent, initialized]);
   /*
   const [seeMarkdown, setSeeMarkdown] = React.useState(false);
   const [markdownValue, setMarkdownValue] = React.useState(`## Title
