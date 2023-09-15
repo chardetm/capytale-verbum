@@ -64,6 +64,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
       const dom = parser.parseFromString(htmlInitialContent, 'text/html');
       editor.update(() => {
         const nodes = $generateNodesFromDOM(editor, dom);
+        console.log(nodes.length, "nodes");
         $getRoot().select();
         $insertNodes(nodes);
       });
