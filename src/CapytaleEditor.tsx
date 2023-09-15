@@ -65,7 +65,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
       editor.update(() => {
         const nodes = $generateNodesFromDOM(editor, dom);
         console.log(nodes.length, "nodes", nodes);
-        $getRoot().select();
+        $getRoot().clear().select();
         $insertNodes(nodes);
       });
       setInitialized(true);
