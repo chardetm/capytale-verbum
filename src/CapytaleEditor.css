@@ -11,15 +11,20 @@
 
 .editor-add-paragraph {
   width: 100%;
-  height: 16px;
+  height: var(--add-paragraph-height);
   background-color: white;
   text-align: center;
-  line-height: 16px;
+  line-height: var(--add-paragraph-height);
   font-size: 20px;
   color: #ccc;
   cursor: pointer;
+  overflow-y: hidden;
 }
 
 .editor-add-paragraph:hover {
   background-color: #eee;
+}
+
+.editor {
+  --add-paragraph-height: 16px;
 }
