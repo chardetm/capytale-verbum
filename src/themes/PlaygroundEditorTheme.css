@@ -93,6 +93,10 @@
   color: rgb(33, 111, 219);
   text-decoration: none;
 }
+.ContentEditable__root[contenteditable='true'] .PlaygroundEditorTheme__link {
+  pointer-events: none;
+  text-decoration: underline;
+}
 .PlaygroundEditorTheme__link:hover {
   text-decoration: underline;
   cursor: pointer;
