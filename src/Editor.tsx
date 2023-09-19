@@ -112,7 +112,7 @@ const Editor = ({
       activeEditor.update(() => {
         // Inserts a new paragraph at the end of the Lexical editor
         const rootNode = $getRoot();
-        const lastChild = rootNode.getLastChild()?.selectEnd();
+        const lastChild = rootNode.getLastChild();
         /*                const selection = $getSelection();
                 const node = selection?.getNodes()[0];
                 const topElement = node.getTopLevelElement(); */
