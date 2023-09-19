@@ -45,6 +45,12 @@ import DraggableBlockPlugin from './plugins/DraggableBlockPlugin';
 import MarkdownTooglePlugin from './plugins/MarkdownTooglePlugin';
 import FloatingTextFormatToolbarPlugin from './plugins/FloatingTextFormatToolbarPlugin';
 import FloatingLinkEditorPlugin from './plugins/FloatingLinkEditorPlugin';
+import {
+  $getSelection,
+  $createParagraphNode,
+  $getNearestNodeFromDOMNode,
+  $getRoot,
+} from 'lexical';
 
 interface IEditorProps {
   children?: ReactNode;
@@ -101,6 +107,22 @@ const Editor = ({
     }
   };
 
+  const addEndParagraph = () => {
+    if (activeEditor) {
+      activeEditor.update(() => {
+        // Inserts a new paragraph at the end of the Lexical editor
+        const rootNode = $getRoot();
+        const lastChild = rootNode.getLastChild()?.selectEnd();
+        /*                const selection = $getSelection();
+                const node = selection?.getNodes()[0];
+                const topElement = node.getTopLevelElement(); */
+        const newParagraph = $createParagraphNode();
+        lastChild.insertAfter(newParagraph);
+        newParagraph.selectEnd();
+      });
+    }
+  };
+
   return (
     <EditorContext.Provider
       value={{ initialEditor: editor, activeEditor, setActiveEditor }}
@@ -122,6 +144,10 @@ const Editor = ({
               <div className="editor-scroller">
                 <div className="editor" ref={onRef}>
                   <ContentEditable />
+                  <div
+                    className="editor-add-paragraph"
+                    onClick={addEndParagraph}
+                  ></div>
                 </div>
               </div>
             }
