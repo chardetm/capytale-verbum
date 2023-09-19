@@ -14,5 +14,5 @@
   position: relative;
   outline: 0;
   padding: var(--v-padding) 28px;
-  min-height: calc(100% - calc(var(--v-padding) * 2));
+  min-height: calc(calc(100% - var(--add-paragraph-height, 0)) - calc(var(--v-padding) * 2));
 }
