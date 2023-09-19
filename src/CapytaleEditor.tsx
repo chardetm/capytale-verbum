@@ -148,7 +148,7 @@ const CapytaleEditorContent: React.FC<ICapytaleEditorContentProps> = ({
           onChange={onChange}
         >
           {isEditable && (
-            <ToolbarPlugin defaultFontSize="20px">
+            <ToolbarPlugin defaultFontSize="default">
               <FontFamilyDropdown />
               <FontSizeDropdown />
               <Divider />

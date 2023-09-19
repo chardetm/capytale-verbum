@@ -4,6 +4,7 @@ import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
 const defaultFontSizeOptions: FontOptions = [
+  ['default', 'Par défaut'],
   ['10px', '10px'],
   ['11px', '11px'],
   ['12px', '12px'],
@@ -28,6 +29,10 @@ const FontSizeDropdown = ({
 
   const onFontSizeSelect = useCallback(
     (e) => {
+      if (e.target.value === 'default') {
+        applyStyleText({ 'font-size': null });
+        return;
+      }
       applyStyleText({ 'font-size': e.target.value });
     },
     [applyStyleText]
