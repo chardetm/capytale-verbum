@@ -4,17 +4,18 @@ import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
 const defaultFontSizeOptions: FontOptions = [
+  ['default', 'Taille par défaut'],
+  ['6px', '6px'],
+  ['8px', '8px'],
   ['10px', '10px'],
-  ['11px', '11px'],
   ['12px', '12px'],
-  ['13px', '13px'],
   ['14px', '14px'],
-  ['15px', '15px'],
   ['16px', '16px'],
-  ['17px', '17px'],
   ['18px', '18px'],
-  ['19px', '19px'],
   ['20px', '20px'],
+  ['24px', '24px'],
+  ['28px', '28px'],
+  ['32px', '32px'],
 ];
 
 interface IFontSizeDropdown {
@@ -28,6 +29,10 @@ const FontSizeDropdown = ({
 
   const onFontSizeSelect = useCallback(
     (e) => {
+      if (e.target.value === 'default') {
+        applyStyleText({ 'font-size': null });
+        return;
+      }
       applyStyleText({ 'font-size': e.target.value });
     },
     [applyStyleText]

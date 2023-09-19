@@ -69,10 +69,10 @@ interface IToolbarProps {
 
 const ToolbarPlugin = ({
   children,
-  defaultFontSize = '15px',
+  defaultFontSize = 'default',
   defaultFontColor = '#000',
   defaultBgColor = '#fff',
-  defaultFontFamily = 'Arial',
+  defaultFontFamily = 'default',
 }: IToolbarProps) => {
   const [insertExists, InsertComponent] = useChild(children, InsertDropdown);
   const [alignExists, AlignComponent] = useChild(children, AlignDropdown);
