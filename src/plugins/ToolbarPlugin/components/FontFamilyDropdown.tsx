@@ -4,6 +4,7 @@ import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
 const defaultFontFamilyOptions: FontOptions = [
+  ['default', 'Police par défaut'],
   ['Arial', 'Arial'],
   ['Courier New', 'Courier New'],
   ['Georgia', 'Georgia'],
@@ -23,6 +24,10 @@ const FontFamilyDropdown = ({
 
   const onFontFamilySelect = useCallback(
     (e) => {
+      if (e.target.value === 'default') {
+        applyStyleText({ 'font-family': null });
+        return;
+      }
       applyStyleText({ 'font-family': e.target.value });
     },
     [applyStyleText]

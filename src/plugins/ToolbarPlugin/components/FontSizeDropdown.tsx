@@ -4,7 +4,7 @@ import ToolbarContext from '../../../context/ToolbarContext';
 import { FontOptions } from '../../../types';
 
 const defaultFontSizeOptions: FontOptions = [
-  ['default', 'Par défaut'],
+  ['default', 'Taille par défaut'],
   ['10px', '10px'],
   ['11px', '11px'],
   ['12px', '12px'],
