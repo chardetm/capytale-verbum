@@ -147,7 +147,8 @@ const Editor = ({
                   <div
                     className="editor-add-paragraph"
                     onClick={addEndParagraph}
-                  ></div>
+                    role='button'
+                  >+</div>
                 </div>
               </div>
             }
