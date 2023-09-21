@@ -1170,7 +1170,7 @@ button.action-button:disabled {
   vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 140x;
+  width: 140px;
   font-size: 14px;
   color: #777;
   text-overflow: ellipsis;
@@ -1198,7 +1198,8 @@ button.action-button:disabled {
   width: 20px;
   height: 20px;
   user-select: none;
-  margin-right: 8px;
+  margin: 0 !important;
+  margin-right: 8px !important;
   line-height: 16px;
   background-size: contain;
 }
