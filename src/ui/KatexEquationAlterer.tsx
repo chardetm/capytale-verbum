@@ -8,13 +8,15 @@
 
 import './KatexEquationAlterer.css';
 
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import * as React from 'react';
-import {useCallback, useState} from 'react';
-import {ErrorBoundary} from 'react-error-boundary';
+import { useCallback, useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 import Button from '../ui/Button';
 import KatexRenderer from './KatexRenderer';
+
+import { MathfieldComponent } from 'react-mathlive';
 
 type Props = {
   initialEquation?: string;
@@ -62,6 +64,9 @@ export default function KatexEquationAlterer({
             className="KatexEquationAlterer_textArea"
           />
         )}
+      </div>
+      <div className="KatexEquationAlterer_centerRow">
+        <MathfieldComponent latex={equation} />
       </div>
       <div className="KatexEquationAlterer_defaultRow">Prévisualisation </div>
       <div className="KatexEquationAlterer_centerRow">
