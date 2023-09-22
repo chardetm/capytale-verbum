@@ -16,7 +16,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import Button from '../ui/Button';
 import KatexRenderer from './KatexRenderer';
 
-import { MathfieldComponent } from 'react-mathlive';
+import { MathfieldComponent } from './MathfieldComponent';
 
 type Props = {
   initialEquation?: string;

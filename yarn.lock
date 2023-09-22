@@ -10251,7 +10251,7 @@ marksy@^8.0.0:
     he "^1.2.0"
     marked "^0.3.12"
 
-"mathlive@>= 0.55.0 < 1":
+mathlive@^0.95.5:
   version "0.95.5"
   resolved "https://registry.npmjs.org/mathlive/-/mathlive-0.95.5.tgz"
   integrity sha512-FAAyx0m7hcYNIZKdmQ3/x+vk1lwSmQU30aGYRN2c5+Zz4H0z+B8+0h9fZgUN7SRvc1MmoeaOrO2iGvC2/RYDEg==
@@ -12235,16 +12235,6 @@ react-dom@*, "react-dom@^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0", react-dom@^1
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-dom@^16.7.0:
-  version "16.14.0"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
-  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
-
 react-element-to-jsx-string@^14.0.2, react-element-to-jsx-string@^14.3.4:
   version "14.3.4"
   resolved "https://registry.npmjs.org/react-element-to-jsx-string/-/react-element-to-jsx-string-14.3.4.tgz"
@@ -12346,15 +12336,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-mathlive@^3.0.5-preview.1:
-  version "3.0.5-preview.1"
-  resolved "https://registry.npmjs.org/react-mathlive/-/react-mathlive-3.0.5-preview.1.tgz"
-  integrity sha512-NkFat1clT1zuAcXd+jgsNtTcNHk1450JhhY645taEJ1yIgCrbKvqIvGxnJGXxQu7mkq3jf1iqfwDj9Gb0q7m3Q==
-  dependencies:
-    mathlive ">= 0.55.0 < 1"
-    react "^16.7.0"
-    react-dom "^16.7.0"
-
 react-popper-tooltip@^2.8.3:
   version "2.11.1"
   resolved "https://registry.npmjs.org/react-popper-tooltip/-/react-popper-tooltip-2.11.1.tgz"
@@ -12400,7 +12381,7 @@ react-textarea-autosize@^7.1.0:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
-react@*, "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0", react@^16.14.0, react@^16.6.0, react@^16.7.0, react@^16.8.3, "react@>=0.14.0 <17.0.0", "react@0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
+react@*, "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0", react@^16.14.0, react@^16.6.0, react@^16.8.3, "react@>=0.14.0 <17.0.0", "react@0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
   version "16.14.0"
   resolved "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
