@@ -16,7 +16,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import Button from '../ui/Button';
 import KatexRenderer from './KatexRenderer';
 
-import { MathfieldComponent } from './MathfieldComponent';
+// @ts-ignore
+import Mathfield from './MathField'
 
 type Props = {
   initialEquation?: string;
@@ -66,7 +67,7 @@ export default function KatexEquationAlterer({
         )}
       </div>
       <div className="KatexEquationAlterer_centerRow">
-        <MathfieldComponent latex={equation} />
+        <Mathfield />
       </div>
       <div className="KatexEquationAlterer_defaultRow">Prévisualisation </div>
       <div className="KatexEquationAlterer_centerRow">
